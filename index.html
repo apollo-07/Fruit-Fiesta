@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Fiesta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Added home screen before game -->
+    <div id="homeScreen" class="home-screen active">
+        <div class="home-content">
+            <h1 class="home-title">Fruit Fiesta</h1>
+            <p class="home-subtitle">Catch the falling fruits!</p>
+            <div class="home-fruits">
+                <span class="fruit-emoji">🍎</span>
+                <span class="fruit-emoji">🍌</span>
+                <span class="fruit-emoji">🍊</span>
+            </div>
+            <p class="home-description">10 challenging levels await. Start easy and master the game!</p>
+            <button id="homeStartBtn" class="btn btn-primary btn-large">Start Game</button>
+        </div>
+    </div>
+
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <div class="header">
+            <div class="title-section">
+                <h1 class="game-title">Fruit Fiesta</h1>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box score-box">
+                <span class="stat-label">Score</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat-box level-box">
+                <span class="stat-label">Level</span>
+                <span class="stat-value" id="level">1</span>
+            </div>
+            <div class="stat-box lives-box">
+                <span class="stat-label">Lives</span>
+                <span class="stat-value" id="lives">5</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="controls-info">
+            <p id="controlsText">Use ← → Arrow Keys or A/D to Move</p>
+        </div>
+
+        <div class="button-container">
+            <button id="homeBtn" class="btn btn-secondary">Home</button>
+            <button id="restartBtn" class="btn btn-primary">Restart</button>
+        </div>
+
+        <div id="levelUpScreen" class="level-up-screen" style="display: none;">
+            <div class="level-up-content">
+                <div class="level-up-animation">
+                    <h2>Level Up!</h2>
+                    <p class="next-level">Level <span id="nextLevelNum">2</span></p>
+                    <p class="level-message">Get ready for more fruits...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameWonScreen" class="game-won-screen" style="display: none;">
+            <div class="game-won-content">
+                <h2>You Win!</h2>
+                <p class="final-message">You conquered all 10 levels!</p>
+                <p class="final-score">Final Score: <span id="winFinalScore">0</span></p>
+                <button id="gameWonRestartBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+
+        <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+            <div class="game-over-content">
+                <h2>Game Over!</h2>
+                <p class="final-score">Final Score: <span id="finalScore">0</span></p>
+                <p class="level-reached">Level Reached: <span id="levelReached">1</span></p>
+                <button id="gameOverRestartBtn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
